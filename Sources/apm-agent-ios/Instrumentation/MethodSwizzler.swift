@@ -50,7 +50,7 @@ internal class MethodSwizzler<T, U> : Instrumentor {
     }
         
     @discardableResult
-    private func sync<T>(block: () -> T) -> T {
+    private func sync<V>(block: () -> V) -> V {
         objc_sync_enter(self)
         defer { objc_sync_exit(self) }
         return block()

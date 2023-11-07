@@ -36,8 +36,7 @@ class SessionSampler: NSObject, Sampler {
     }
   }
 
-  private let accessQueue = DispatchQueue(
-    label: "SessionSampler.accessor", qos: .default, attributes: .concurrent)
+  private let accessQueue = DispatchQueue(label: "SessionSampler.accessor", attributes: .concurrent)
 
   private let sampleRateResolver: () -> Double
 
